@@ -1,1 +1,17 @@
-test
+import os
+import csv
+all_files = list()
+for root, dirs, files in os.walk("C://Users"):
+ all_files.extend(files)
+file = ('C://Users')
+type(file)
+csvreader = csv.reader(file)
+header = ['file','extension']
+header = next(csvreader)
+header
+rows = []
+for row in csvreader:
+ rows.append(row)
+rows
+all_files.sort(key=lambda f: os.path.splitext(f)[1])
+print(all_files)test
