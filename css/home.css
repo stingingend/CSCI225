@@ -1,10 +1,111 @@
-.footer{
+body {
+    position: relative;
+    background-image: url(../img/background.gif);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 1920px 1080px;
+    text-shadow: 2px 2px 4px black;
+}
+a {
+    font-weight: bold;
+}
+nav {
+    display: none;
+}
+a:hover {
+    
+    font-style: italic;
+    background-color: yellow;
+}
+footer {
     position: fixed;
+}
+body {
+    overflow: hidden;
+    }
+
+p::first-letter{
+    font-size: 2.0rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    line-height: normal;
 
 }
-.introduction, .portfolio, .schedule, .contact, .address,.assignments,.socials{
-    position: absolute;
+.introduction, .portfolio, .schedule, .contact, .address, .assignment, .socials {
+    visibility: hidden;
+
+}
+h1 {
+    line-height: 5;
+    text-align: center;
+    font-size: 2em;
+    visibility: visible;
+    position: fixed;
+    top: 45%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-size: 200px 150px;
+    background-position: center;
+    text-shadow: 2px 2px 4px black;
+    border: 2px solid black;
+    background-color: #2596be;
+    text-transform: uppercase;
+    letter-spacing: normal;
+}
+h1{
+
+    background-repeat: no-repeat;
+    background-size: contain;   
+
+}
+element:active{
+    background-size: cover;
+}
+.introduction:active, .portfolio:active, .schedule:active, .contact:active, .address:active, .assignment:active, .socials:active {
+    visibility: visible;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    color: white;
+    transition: 2s ease-in-out;
+}
+
+
+.introduction:active h1, .portfolio:active h1, .schedule:active h1, .contact:active h1, .address:active h1, .assignment:active h1, .socials:active h1 {
+    visibility: hidden;
+}
+.circle-container img { display: block; width: 100%; }
+.contact h1 { transform: translate(15em); } /* 12em = half the width of the wrapper */
+.socials h1 { transform: rotate(45deg) translate(15em) rotate(-45deg); }
+.schedule h1{ transform: rotate(135deg) translate(15em) rotate(-135deg); }
+.portfolio h1 { transform: translate(-15em); }
+.assignment h1 { transform: rotate(225deg) translate(15em) rotate(-225deg); }
+.introduction h1 { transform: rotate(315deg) translate(15em) rotate(-315deg); }
+
+
+
+tr {
+    background-color: lightgray;
+}
+td, th {
+    border: 1px solid black;
+    padding: 5px;
+    vertical-align: middle;
+}
+
+td:empty::before {
+    content: "x";
+}
+.portfolio, .contact, .assignment, .schedule {
+    border-radius: 10px;
+    border-right: 3px solid #fff; /* Add right border */
+    border-bottom: 3px solid #fff; /* Add bottom border */
+    background-color: #45b3e0;
+}
+tr:nth-child(even) {
+    background-color: blue;
 }
