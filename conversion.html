@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Conversion</title>
+</head>
+<body>
+    <div>
+        <div id="conversion">
+            <h1>Conversion</h1>
+            <form>
+                <label for="from">From:</label>
+                <select id="from" name="from" required>
+                    <option value="">Select</option>
+                    <option value="inches">Inches</option>
+                    <option value="feet">Feet</option>
+                    <option value="meters">Meters</option>
+                </select>
+                <label for="to">To:</label>
+                <select id="to" name="to" required>
+                    <option value="">Select</option>
+                    <option value="inches">Inches</option>
+                    <option value="feet">Feet</option>
+                    <option value="meters">Meters</option>
+                </select>
+                <label for="value">Value:</label>
+                <input type="number" id="value" name="value" required>
+                <button type="submit">Convert</button>
+            </form>
+            <div id="result"></div>
+    <script src="js/conversion.js"></script>
+    <script>
+        document.getElementById("conversion");
+        document.querySelector("form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            var fromUnit = document.getElementById("from").value;
+            var toUnit = document.getElementById("to").value;
+            var value = parseFloat(document.getElementById("value").value);
+
+            var result;
+            if (fromUnit === "feet" && toUnit === "inches") {
+                result = value * 12;
+            } else if (fromUnit === "inches" && toUnit === "feet") {
+                result = value / 12;
+            } else if (fromUnit === "feet" && toUnit === "meters") {
+                result = value * 0.3048;
+            } else if (fromUnit === "meters" && toUnit === "feet") {
+                result = value / 0.3048;
+            } else if (fromUnit === "inches" && toUnit === "meters") {
+                result = value * 0.0254;
+            } else if (fromUnit === "meters" && toUnit === "inches") {
+            } else {
+                result = value;
+            }
+
+            document.getElementById("result").textContent = result;
+        });
+    </script>
+</div>
+
+</body>
+</html>
