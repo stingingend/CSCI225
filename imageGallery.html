@@ -1,0 +1,71 @@
+<link rel= "stylesheet" href="css/photos.css">
+<container>
+    <body>
+<div class="gallery">
+    <div class="img-container-hide">
+        <img src="img/nature.gif" alt="picture" />
+    </div>
+    <div class="img-container-hide">
+        <img src="img/dento.gif" alt="picture" />
+    </div>
+    <div class="img-container-hide">
+        <img src="img/SMOKING.gif" alt="picture" />
+    </div>
+    <div class="img-container-hide">
+        <img src="img/rain.gif" alt="picture">
+    </div>
+    <div class="img-container-hide">
+        <img src="img/cat.gif" alt="picture">
+    </div>
+    <div class ="arrow">
+        <button onclick="reversechangepic()"><img src="img/arrow.png" alt="arrow" class=""></button>
+    <div class ="otherarrow">
+        <button onclick="changepic()"><img src="img/arrow.png" alt="arrow" class=""></button>
+    </div>
+    </div>
+    
+    <div class="circle1">
+        <button onclick="changeIndex(0)"><img src="img/circle.png" alt="circle" class=""></button>
+    </div>
+    <div class="circle2">
+        <button onclick="changeIndex(1)"><img src="img/circle.png" alt="circle" class=""></button>
+    </div>
+    <div class="circle3">
+        <button onclick="changeIndex(2)"><img src="img/circle.png" alt="circle" class=""></button>
+    </div>
+    <div class="circle4">
+        <button onclick="changeIndex(3)"><img src="img/circle.png" alt="circle" class=""></button>
+    </div>
+    <div class="circle5">
+        <button onclick="changeIndex(4)"><img src="img/circle.png" alt="circle" class=""></button>
+    </div>
+
+    <script>
+        var imglist = document.querySelectorAll('.img-container-hide');
+        imglist[0].setAttribute('class','img-container');
+        var index = 0;
+        function changepic(){
+            imglist[index].setAttribute('class','img-container-hide');
+            index++;
+            index = index % 5;
+            imglist[index].setAttribute('class','img-container');
+        }
+        function reversechangepic(){
+            imglist[index].setAttribute('class','img-container-hide');
+            index--;
+            if(index < 0){
+                index = 4;
+            }
+            imglist[index].setAttribute('class','img-container');
+
+        }
+        function changeIndex(num) {
+            imglist[index].setAttribute('class', 'img-container-hide');
+            index = num;
+            imglist[index].setAttribute('class', 'img-container');
+        }
+
+    </script>
+    </div>
+    </body>
+</container>
